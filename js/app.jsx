@@ -1,11 +1,7 @@
-(function(){
-	'use strict';
+'use strict';
+import React from "react";
+import ReactDOM from "react-dom";
+import Quiz from "./quiz";
 
-	let Quiz = React.createClass({
-		render: () => {
-			return <div>hello</div>;
-		}
-	});
-
-	ReactDOM.render(<Quiz />, document.getElementById("container"));
-})();
+ReactDOM.render(<Quiz books = {["The Lord of The Rings", "Harry Potter", "Monk Who sold his Ferrari"]}/>, 
+	document.getElementById("container"));
