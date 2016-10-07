@@ -1,0 +1,128 @@
+
+.title{
+  width: 1425px;
+  height: 60px;
+  color: darkgoldenrod;
+  background-color: #333;
+  font-size: 23px;
+  text-indent: 10px;
+  padding: 14px;
+}
+
+.sources {
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  width: 1425px;
+  height: 40px;
+  background-color: #ccc;
+  text-align: center;
+  font-size: 18px;
+  padding: 10px;
+}
+
+.website,
+.facebook {
+    padding-right: 45px;
+}
+
+.website,
+.facebook,
+.twitter {
+  cursor: pointer;
+}
+
+.fa {
+    padding-right: 6px;
+}
+
+.configured-sources {
+  position: absolute;
+    width: 300px;
+    border-right-style: solid;
+    height: 768px;
+    border-width: 1px;
+    padding: 7px 0px 0px 21px;
+    font-size: 22px;
+        top: 100px;
+}
+.search {
+    position: absolute;
+    top: 150px;
+    left: 478px;
+    width: 770px;
+    height: 55px;
+    font-size: 21px;
+
+}
+.search-keyword{
+  width: 739px;
+  height: 55px;
+  background-color: #DEDEDE;
+}
+.search-icon {
+  position: absolute;
+  top: 16px;
+  left: 709px;
+  color: darkgray;
+}
+.web-sources {
+  background-color: #DEDEDE;
+  position: absolute;
+  top: 273px;
+  left: 300px;
+  height: 595px;
+  width: 1125px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.url {
+  position: relative;
+  background-color: white;
+  height: 90px;
+  width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 41px 30px 40px 39px;
+  list-style: none;
+
+}
+.square-box {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: inherit;
+  background-color: rgba(215, 215, 215, 1);
+  border: none;
+  border-radius: 3px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  vertical-align: top;
+  margin-right: 5px;
+}
+.url-name {
+  display: inline;
+  font-size: 18px;
+  padding: 1px 7px 0px 5px;
+}
+.web-link {
+  display: inherit;
+  font-size: 11px;
+  padding: 2px 0px 1px 1px;
+}
+.circle {
+  position: absolute;
+  left: 258px;
+    top: 7px;
+  font-size: 38px;
+  color: #ccc;
+}
+.plus {
+  position: absolute;
+  left: 266px;
+  top: 16px;
+  font-size: 22px;
+  color: #ccc;
+}

@@ -5,9 +5,7 @@ import Book from "./book";
 export default class Quiz extends Component {
 	render () {
 		return <div>
-				<Book title = {this.props.books[0]} />
-				<Book title = {this.props.books[1]} />
-				<Book title = {this.props.books[2]} />
+				{ this.props.books.map((book, key) => { return <Book key={ key } title={ book } /> }) }
 			</div>;
 	}
 }
