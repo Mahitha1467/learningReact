@@ -66,7 +66,7 @@
   left: 709px;
   color: darkgray;
 }
-.web-sources {
+.feeds {
   background-color: #DEDEDE;
   position: absolute;
   top: 273px;
@@ -108,7 +108,7 @@
   display: inline-block;
   word-wrap: break-word;
 }
-.web-link {
+.url-link {
   display: inherit;
   font-size: 11px;
   padding: 2px 0px 1px 1px;

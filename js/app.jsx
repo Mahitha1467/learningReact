@@ -3,14 +3,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 import Quiz from "./quiz";
 import Login from "./loginPage";
-import * as webConfigure from "./webConfigure";
+import Header from "./header";
+import ConfiguredSources from "./configuredSources";
+import Search from "./searchBox";
+import Sources from "./sources";
 import FontAwesome from "react-fontawesome";
 
 ReactDOM.render(<Quiz books = {["The Lord of The Rings", "Harry Potter", "Monk Who sold his Ferrari", "Some Other book names"]}/>,
 	document.getElementById("container"));
 
 ReactDOM.render(<Login />, document.getElementById("container"));
-ReactDOM.render(<webConfigure.Header />, document.getElementById("container"));
-ReactDOM.render(<webConfigure.ConfiguredSources />, document.getElementById("configuredSources"));
-ReactDOM.render(<webConfigure.Search />, document.getElementById("search"));
-ReactDOM.render(<webConfigure.WebSources />, document.getElementById("webSources"));
+ReactDOM.render(<Header />, document.getElementById("container"));
+ReactDOM.render(<ConfiguredSources />, document.getElementById("configuredSources"));
+ReactDOM.render(<Search />, document.getElementById("search"));
+ReactDOM.render(<Sources />, document.getElementById("sources"));
