@@ -15,5 +15,4 @@ export default class Sources extends Component {
       {urlsList}
     </div>
   }
-
 }

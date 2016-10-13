@@ -14,6 +14,6 @@ ReactDOM.render(<Quiz books = {["The Lord of The Rings", "Harry Potter", "Monk W
 
 ReactDOM.render(<Login />, document.getElementById("container"));
 ReactDOM.render(<Header />, document.getElementById("container"));
-ReactDOM.render(<ConfiguredSources />, document.getElementById("configuredSources"));
 ReactDOM.render(<Search />, document.getElementById("search"));
 ReactDOM.render(<Sources />, document.getElementById("sources"));
+ReactDOM.render(<ConfiguredSources />, document.getElementById("configuredSources"));
