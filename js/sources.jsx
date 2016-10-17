@@ -3,6 +3,7 @@ import React, {Component} from "react";
 import ReactDOM from "react-dom";
 import Url from "./urls";
 import ConfiguredSources from "./configuredSources";
+import LeftPanelUrl from "./leftPanelUrl";
 
 export default class Sources extends Component {
   constructor() {
@@ -16,7 +17,7 @@ export default class Sources extends Component {
 
   _getUrls(){
    var urls = [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},{title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},{title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},{title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},{title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"}];
-   var thisn = this;
+   let thisn = this;
    return urls.map(function(url, index){
        return <Url title={url.title} link={url.link} key = {index} addUrl = {thisn._addUrlToList.bind(thisn)}/>;
      });
@@ -24,7 +25,7 @@ export default class Sources extends Component {
 
   render(){
     var urlsList = this._getUrls();
-    <ConfiguredSources getUrls = {this.state.ConfiguredSourcesList}/>
+    <ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>
     return <div id="Feeds" className = "feeds">
       {urlsList}
     </div>
@@ -36,6 +37,19 @@ export default class Sources extends Component {
         this.setState(
           {ConfiguredSourcesList : this.state.ConfiguredSourcesList }
         );
-        ReactDOM.render(<ConfiguredSources getUrls = {this.state.ConfiguredSourcesList}/>, document.getElementById("configuredSources"));
+        ReactDOM.render(<ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>, document.getElementById("configuredSources"));
+    }
+
+    _removeUrl(urlName){
+      var newthis = this;
+      this.state.ConfiguredSourcesList.map(function(source, index){
+        if(source.url === urlName){
+          newthis.state.ConfiguredSourcesList.splice(index, 1);
+        }
+      });
+      this.setState(
+      {ConfiguredSourcesList : this.state.ConfiguredSourcesList }
+      );
+      ReactDOM.render(<ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>, document.getElementById("configuredSources"));
     }
 }

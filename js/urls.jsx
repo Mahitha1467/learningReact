@@ -1,8 +1,6 @@
 'use strict'
 import React, {Component} from "react";
-// import ConfiguredSources from "./configuredSources";
 import LeftPanelUrl from "./leftPanelUrl";
-// import Sources from "./sources";
 import ReactDOM from "react-dom";
 
 export default class Url extends Component {
