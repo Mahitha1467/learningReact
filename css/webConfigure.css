@@ -113,16 +113,14 @@
   font-size: 38px;
   color: #ccc;
 }
-.plus {
-  display: block;
-}
 .plus, .tick {
-  position: absolute;
-  left: 266px;
-  top: 16px;
-  font-size: 22px;
-  color: #ccc;
+ position: absolute;
+ left: 266px;
+ top: 16px;
+ font-size: 22px;
+ color: #ccc;
 }
-.tick {
-  display: none;
+.tick{
+ display: block;
+ left:263px;
 }

@@ -10,7 +10,7 @@ export default class Sources extends Component {
       super();
       this.state = {
           ConfiguredSourcesList: [
-          ]
+          ],
       };
       this._addUrlToList = this._addUrlToList.bind(this);
   }
@@ -19,7 +19,15 @@ export default class Sources extends Component {
    var urls = [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},{title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},{title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},{title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},{title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"}];
    let thisn = this;
    return urls.map(function(url, index){
-       return <Url title={url.title} link={url.link} key = {index} addUrl = {thisn._addUrlToList.bind(thisn)}/>;
+        let count = 0;
+        let isConfigured=false;
+
+        for( let i in thisn.state.ConfiguredSourcesList){
+          if(thisn.state.ConfiguredSourcesList[i].url === url.title) {count++}
+        }
+        
+        if(count > 0 ){isConfigured = true}
+       return <Url title={url.title} link={url.link} key = {index} isConfigured = {isConfigured} addUrl = {thisn._addUrlToList.bind(thisn)}/>;
      });
  }
 
