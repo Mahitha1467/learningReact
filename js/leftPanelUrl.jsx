@@ -5,7 +5,9 @@ export default class LeftPanelUrl extends React.Component{
     render(){
         return (
             <div className="left-panel-url">
-                <p>{this.props.addUrl}</p>
+                <span className = "square-box" />
+                <span>{this.props.url}</span>
+                  <span className = "canel-button"><i className="fa fa-times" aria-hidden="true"></i></span>
             </div>
         );
     }

@@ -1,0 +1,36 @@
+.configured-sources {
+  position: absolute;
+  width: 300px;
+  border-right-style: solid;
+  height: 768px;
+  border-width: 1px;
+  padding: 7px 0px 0px 21px;
+  font-size: 22px;
+  top: 100px;
+  font-family: 'HelveticaNeue', 'Helvetica Neue';
+}
+.left-panel-url {
+    font-size: 18px;
+    color: #000000;
+    margin: 3px 0px 0px 17px;
+}
+.canel-button {
+    color: darkgray;
+    float: right;
+    padding:5px 0px 0px 8px;
+}
+.square-box {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  background: inherit;
+  background-color: rgba(215, 215, 215, 1);
+  border: none;
+  border-radius: 3px;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  vertical-align: top;
+  margin-right: 5px;
+  margin-top: 3px;
+}

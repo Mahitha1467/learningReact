@@ -36,16 +36,7 @@
     padding-right: 6px;
 }
 
-.configured-sources {
-  position: absolute;
-    width: 300px;
-    border-right-style: solid;
-    height: 768px;
-    border-width: 1px;
-    padding: 7px 0px 0px 21px;
-    font-size: 22px;
-        top: 100px;
-}
+
 .search {
     position: absolute;
     top: 150px;
@@ -123,9 +114,15 @@
   color: #ccc;
 }
 .plus {
+  display: block;
+}
+.plus, .tick {
   position: absolute;
   left: 266px;
   top: 16px;
   font-size: 22px;
   color: #ccc;
+}
+.tick {
+  display: none;
 }

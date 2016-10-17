@@ -1,14 +1,12 @@
 'use strict'
 import React, {Component} from "react";
-import ConfiguredSources from "./configuredSources";
+// import ConfiguredSources from "./configuredSources";
 import LeftPanelUrl from "./leftPanelUrl";
+// import Sources from "./sources";
 import ReactDOM from "react-dom";
 
 export default class Url extends Component {
-  constructor(){
-    super();
-    this.name;
-  }
+
   render(){
     return  <div  className = "url">
     <span className = "square-box" />
@@ -23,7 +21,7 @@ export default class Url extends Component {
 
     _handleClick(event){
       event.preventDefault();
-      let url=$($(event.target)[0].parentNode)[0].previousSibling.innerHTML;
-      ReactDOM.render(<ConfiguredSources url = {url}/>, document.getElementById("configuredSources"));
+      let source=$($(event.target)[0].parentNode)[0].previousSibling.innerHTML;
+      this.props.addUrl(source);
     }
 }
