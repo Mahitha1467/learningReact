@@ -2,7 +2,9 @@
   position: absolute;
   width: 300px;
   border-right-style: solid;
-  height: 768px;
+  border-bottom-style: solid;
+  border-color: rgba(121, 121, 121, 1);
+  height: 668px;
   border-width: 1px;
   padding: 7px 0px 0px 21px;
   font-size: 22px;
@@ -10,7 +12,7 @@
   font-family: 'HelveticaNeue', 'Helvetica Neue';
 }
 .left-panel-url {
-    font-size: 18px;
+    font-size: 16px;
     color: #000000;
     margin: 3px 0px 0px 17px;
 }

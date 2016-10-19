@@ -4,6 +4,8 @@ import Sources from "./sources";
 
 export default class LeftPanelUrl extends React.Component{
     render(){
+      let urlName = this.props.url;
+      // console.log(urlName)
         return (
             <div className="left-panel-url">
                 <span className = "square-box" />
@@ -16,7 +18,6 @@ export default class LeftPanelUrl extends React.Component{
     _removeUrl(event){
       let urlName = event.target.parentNode.previousSibling.innerHTML;
       this.props.remove(urlName);
-      // console.log(event.target.parentNode.previousSibling.innerHTML);
     }
 
 }

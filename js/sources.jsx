@@ -9,14 +9,22 @@ export default class Sources extends Component {
   constructor() {
       super();
       this.state = {
-          ConfiguredSourcesList: [
-          ],
+          ConfiguredSourcesList: [],
       };
-      this._addUrlToList = this._addUrlToList.bind(this);
   }
 
   _getUrls(){
-   var urls = [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},{title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},{title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},{title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},{title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"}];
+   var urls = [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},
+   {title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},
+   {title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},
+   {title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},
+   {title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"},
+   {title: "The Hindu", link:"http://www.thehindu.com/opinion/?service=rss"},
+   {title: "Times of India", link:"http://timesofindia.indiatimes.com/rssfeedstopstories.cms"},
+   {title: "Deccan Chronicle", link:"http://www.deccanchronicle.com/rss_feed/"},
+   {title: "The Guardian", link:"https://www.theguardian.com/world/rss"}
+ ];
+
    let thisn = this;
    return urls.map(function(url, index){
         let count = 0;
@@ -25,7 +33,7 @@ export default class Sources extends Component {
         for( let i in thisn.state.ConfiguredSourcesList){
           if(thisn.state.ConfiguredSourcesList[i].url === url.title) {count++}
         }
-        
+
         if(count > 0 ){isConfigured = true}
        return <Url title={url.title} link={url.link} key = {index} isConfigured = {isConfigured} addUrl = {thisn._addUrlToList.bind(thisn)}/>;
      });
@@ -33,10 +41,19 @@ export default class Sources extends Component {
 
   render(){
     var urlsList = this._getUrls();
-    <ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>
-    return <div id="Feeds" className = "feeds">
-      {urlsList}
-    </div>
+    return(<div>
+          <div id="Feeds" className = "feeds">
+            {urlsList}
+            <div className = "next">
+            <span className ="next-arrow"><i className="fa fa-chevron-circle-right" aria-hidden="true"></i></span><br/>
+            <span className = "next-font">Next</span>
+            </div>
+          </div>
+        <div id= "ConfiguredSources" className="configured-sources">
+          <ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>
+        </div>
+        </div>
+      );
   }
 
   _addUrlToList(url){
@@ -45,7 +62,6 @@ export default class Sources extends Component {
         this.setState(
           {ConfiguredSourcesList : this.state.ConfiguredSourcesList }
         );
-        ReactDOM.render(<ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>, document.getElementById("configuredSources"));
     }
 
     _removeUrl(urlName){
@@ -56,8 +72,7 @@ export default class Sources extends Component {
         }
       });
       this.setState(
-      {ConfiguredSourcesList : this.state.ConfiguredSourcesList }
+        {ConfiguredSourcesList : this.state.ConfiguredSourcesList }
       );
-      ReactDOM.render(<ConfiguredSources getUrls = {this.state.ConfiguredSourcesList} removeUrl =  {this._removeUrl.bind(this)}/>, document.getElementById("configuredSources"));
     }
 }

@@ -6,10 +6,10 @@ import LeftPanelUrl from "./leftPanelUrl";
 export default class ConfiguredSources extends Component {
 
   render(){
-    return <div id= "ConfiguredSources" className = "configured-sources">
+    return (<div>
             <span><b>My Sources</b></span>
             {this._getSources()}
-        </div>;
+        </div>);
   }
   _remove(url){
     this.props.removeUrl(url);
