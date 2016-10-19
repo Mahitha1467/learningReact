@@ -1,30 +1,31 @@
 'use strict'
 import React, {Component} from "react";
 import ReactDOM from "react-dom";
-import Url from "./urls";
+import Url from "./url";
 import ConfiguredSources from "./configuredSources";
 import LeftPanelUrl from "./leftPanelUrl";
 
-export default class Sources extends Component {
+export default class SourceUrls extends Component {
   constructor() {
       super();
       this.state = {
-          ConfiguredSourcesList: [],
+        urls : [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},
+        {title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},
+        {title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},
+        {title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},
+        {title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"},
+        {title: "The Hindu", link:"http://www.thehindu.com/opinion/?service=rss"},
+        {title: "Times of India", link:"http://timesofindia.indiatimes.com/rssfeedstopstories.cms"},
+        {title: "Deccan Chronicle", link:"http://www.deccanchronicle.com/rss_feed/"},
+        {title: "The Guardian", link:"https://www.theguardian.com/world/rss"}
+      ],
+
+      ConfiguredSourcesList: [],
       };
   }
 
   _getUrls(){
-   var urls = [{title: "Economic times", link:"http://economictimes.indiatimes.com/rssfeedstopstories.cms"},
-   {title: "Scroll", link:"http://feeds.feedburner.com/ScrollinArticles.rss"},
-   {title: "NDTV", link:"http://feeds.feedburner.com/NDTV-LatestNews"},
-   {title: "Indian Express", link:"http://indianexpress.com/section/india/feed/"},
-   {title: "New Zealand Herald", link:"http://rss.nzherald.co.nz/rss/xml/nzhtsrsscid_000000698.xml"},
-   {title: "The Hindu", link:"http://www.thehindu.com/opinion/?service=rss"},
-   {title: "Times of India", link:"http://timesofindia.indiatimes.com/rssfeedstopstories.cms"},
-   {title: "Deccan Chronicle", link:"http://www.deccanchronicle.com/rss_feed/"},
-   {title: "The Guardian", link:"https://www.theguardian.com/world/rss"}
- ];
-
+    let urls=this.state.urls;
    let thisn = this;
    return urls.map(function(url, index){
         let count = 0;
